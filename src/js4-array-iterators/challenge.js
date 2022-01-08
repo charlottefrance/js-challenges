@@ -22,7 +22,10 @@
  */
 
 export const removeFalseValues = (booleanArr) => {
-  return;
+  const trueValues = booleanArr.filter(boolean => {
+    return boolean === true;
+  });
+  return trueValues;
 };
 
 /**
@@ -34,7 +37,8 @@ export const removeFalseValues = (booleanArr) => {
  */
 
 export const createPercentageList = (numbersArr) => {
-  return;
+  const percentage = numbersArr.map((number) => number*100 + "%")
+  return percentage;
 };
 
 /**
@@ -47,7 +51,10 @@ export const createPercentageList = (numbersArr) => {
  */
 
 export const createListOfPoessessions = (possessionsArr, name) => {
-  return;
+  const newPossessions = possessionsArr.map((possession) => {
+    return name + " " + possession;
+  })
+  return newPossessions;
 };
 
 /**
@@ -72,7 +79,8 @@ export const createListOfPoessessions = (possessionsArr, name) => {
  */
 
 export const convertStringToNumbersArray = (numberString) => {
-  return;
+  const numberArray = numberString.split("+").map((number) => Number(number));
+  return numberArray
 };
 
 /**
@@ -84,7 +92,6 @@ export const convertStringToNumbersArray = (numberString) => {
  */
 
 export const createOddEvenArray = (numberString) => {
-  return;
 };
 
 /**
@@ -97,7 +104,8 @@ export const createOddEvenArray = (numberString) => {
  */
 
 export const filterBooksBySearch = (booksArr, searchTerm) => {
-  return;
+  const search = booksArr.filter((book) => book.includes(searchTerm));
+  return search;
 };
 
 /**

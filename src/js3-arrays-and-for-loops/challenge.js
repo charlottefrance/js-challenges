@@ -22,7 +22,16 @@
  */
 
 export const createRecipeString = (ingredientsArr) => {
-  return;
+  let recipeString = "";
+
+  for(let index = 0; index < ingredientsArr.length; index++){
+    if(index === ingredientsArr.length - 1){
+      recipeString += ingredientsArr[index];
+    } else {
+      recipeString += ingredientsArr[index] + "+";
+    }
+  }
+  return recipeString;
 };
 
 /**
@@ -33,7 +42,9 @@ export const createRecipeString = (ingredientsArr) => {
  */
 
 export const getFirstAndLastItems = (itemsArr) => {
-  return;
+  const first = itemsArr[0];
+  const last = itemsArr[itemsArr.length - 1];
+  return [first, last];
 };
 
 /**
@@ -44,7 +55,9 @@ export const getFirstAndLastItems = (itemsArr) => {
  */
 
 export const totalScores = (scoreArr) => {
-  return;
+  let sum = 0;
+  for (let i = 0; i < scoreArr.length; i++) {  sum += scoreArr[i]}
+  return sum;
 };
 
 /**
@@ -52,7 +65,7 @@ export const totalScores = (scoreArr) => {
  */
 
 /**
- * A function that takes an number and returns the total of the range of numbers between 0 and the given number.
+ * A function that takes a number and returns the total of the range of numbers between 0 and the given number.
  * e.g. 10 => 0+1+2+3+4+5+6+7+8+9+10 = 55.
  *
  * @param {number} rangeMax 10
@@ -60,7 +73,12 @@ export const totalScores = (scoreArr) => {
  */
 
 export const totalRange = (rangeMax) => {
-  return;
+  let sum = 0;
+  for (let i = 0; i <= rangeMax; i++) {
+    sum += i;
+  }
+
+  return sum;
 };
 
 /**
@@ -71,7 +89,10 @@ export const totalRange = (rangeMax) => {
  */
 
 export const moveFirstAndLastItems = (itemsArr) => {
-  return;
+  const last = itemsArr[itemsArr.length - 1]
+  const toMove = last.pop();
+  last.unshift(toMove);
+  return last;
 };
 
 /**
